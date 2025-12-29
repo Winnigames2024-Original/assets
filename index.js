@@ -10,10 +10,10 @@ if (asset_id) {
 async function loadAndInsertContent(url, targetDivId) {
   try {
     const response = await fetch(url);
-    const htmlContent = await response; // Получаем код как текст
+    const htmlContent = await response.text(); // Получаем код как текст
 
     const targetDiv = document.getElementById(targetDivId);
-    allCodeRest = htmlContent;
+    allCodeRest = JSON.stringify(await response);
     targetDiv.insertAdjacentHTML('beforeend', htmlContent);
 
     } catch (error) {

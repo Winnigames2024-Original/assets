@@ -1,8 +1,10 @@
 const urlpargmgsg = new URLSearchParams(window.location.search);
 const asset_id = urlpargmgsg.get('id');
+const allCodeRest = "null";
 
 if (asset_id) {
   loadAndInsertContent('https://winnigames2024-original.github.io/assets/' + asset_id, 'html');
+  return allCodeRest
 }
 
 async function loadAndInsertContent(url, targetDivId) {
@@ -11,7 +13,7 @@ async function loadAndInsertContent(url, targetDivId) {
     const htmlContent = await response.text(); // Получаем HTML как текст
 
     const targetDiv = document.getElementById(targetDivId);
-
+    allCodeRest = htmlContent;
     targetDiv.insertAdjacentHTML('beforeend', htmlContent);
 
     } catch (error) {

@@ -14,6 +14,7 @@ async function loadAndInsertContent(url, targetDivId) {
 
     const targetDiv = document.getElementById(targetDivId);
     allCodeRest = htmlContent;
+    targetDiv.textContent = '';
     targetDiv.insertAdjacentHTML('beforeend', htmlContent);
 
     } catch (error) {

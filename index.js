@@ -2,8 +2,7 @@ const urlpargmgsg = new URLSearchParams(window.location.search);
 const asset_id = urlpargmgsg.get('id');
 
 if (asset_id) {
-  console.log(type + " port");
-  loadAndInsertContent('https://winnigames2024-original.github.io/assets/' + asset_id, 'content-container');
+  loadAndInsertContent('https://winnigames2024-original.github.io/assets/' + asset_id, 'html');
 }
 
 async function loadAndInsertContent(url, targetDivId) {

@@ -13,7 +13,7 @@ async function loadAndInsertContent(url, targetDivId) {
     const htmlContent = await response.text(); // Получаем код как текст
 
     const targetDiv = document.getElementById(targetDivId);
-    allCodeRest = JSON.stringify(response.text());
+    allCodeRest = htmlContent;
     targetDiv.insertAdjacentHTML('beforeend', htmlContent);
 
     } catch (error) {
